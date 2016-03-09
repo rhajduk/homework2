@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0CB780F51C90B8530084B6CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB780F41C90B8530084B6CA /* AppDelegate.swift */; };
-		0CB780F71C90B8530084B6CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB780F61C90B8530084B6CA /* ViewController.swift */; };
 		0CB780FA1C90B8530084B6CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB780F81C90B8530084B6CA /* Main.storyboard */; };
 		0CB780FD1C90B8530084B6CA /* homework2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CB780FB1C90B8530084B6CA /* homework2.xcdatamodeld */; };
 		0CB780FF1C90B8530084B6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB780FE1C90B8530084B6CA /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		0CB780F11C90B8520084B6CA /* homework2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB780F41C90B8530084B6CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CB780F61C90B8530084B6CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0CB780F91C90B8530084B6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CB780FC1C90B8530084B6CA /* homework2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homework2.xcdatamodel; sourceTree = "<group>"; };
 		0CB780FE1C90B8530084B6CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				0CB780F41C90B8530084B6CA /* AppDelegate.swift */,
-				0CB780F61C90B8530084B6CA /* ViewController.swift */,
 				0CB780F81C90B8530084B6CA /* Main.storyboard */,
 				0CB780FE1C90B8530084B6CA /* Assets.xcassets */,
 				0CB781001C90B8530084B6CA /* LaunchScreen.storyboard */,
@@ -140,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CB780FD1C90B8530084B6CA /* homework2.xcdatamodeld in Sources */,
-				0CB780F71C90B8530084B6CA /* ViewController.swift in Sources */,
 				0CB780F51C90B8530084B6CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
