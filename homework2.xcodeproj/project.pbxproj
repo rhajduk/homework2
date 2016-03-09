@@ -12,6 +12,8 @@
 		0CB780FD1C90B8530084B6CA /* homework2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0CB780FB1C90B8530084B6CA /* homework2.xcdatamodeld */; };
 		0CB780FF1C90B8530084B6CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB780FE1C90B8530084B6CA /* Assets.xcassets */; };
 		0CB781021C90B8530084B6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB781001C90B8530084B6CA /* LaunchScreen.storyboard */; };
+		0CB7810A1C90B9D30084B6CA /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB781091C90B9D30084B6CA /* EventsTableViewController.swift */; };
+		0CB7810C1C90BA210084B6CA /* DisplayEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7810B1C90BA210084B6CA /* DisplayEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		0CB780FE1C90B8530084B6CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CB781011C90B8530084B6CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CB781031C90B8530084B6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CB781091C90B9D30084B6CA /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		0CB7810B1C90BA210084B6CA /* DisplayEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				0CB781001C90B8530084B6CA /* LaunchScreen.storyboard */,
 				0CB781031C90B8530084B6CA /* Info.plist */,
 				0CB780FB1C90B8530084B6CA /* homework2.xcdatamodeld */,
+				0CB781091C90B9D30084B6CA /* EventsTableViewController.swift */,
+				0CB7810B1C90BA210084B6CA /* DisplayEventViewController.swift */,
 			);
 			path = homework2;
 			sourceTree = "<group>";
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB7810C1C90BA210084B6CA /* DisplayEventViewController.swift in Sources */,
 				0CB780FD1C90B8530084B6CA /* homework2.xcdatamodeld in Sources */,
 				0CB780F51C90B8530084B6CA /* AppDelegate.swift in Sources */,
+				0CB7810A1C90B9D30084B6CA /* EventsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
