@@ -1,5 +1,5 @@
 //
-//  DisplayEventViewController.swift
+//  addNewEventViewController.swift
 //  homework2
 //
 //  Created by Rebecca Hajduk on 3/9/16.
@@ -9,22 +9,13 @@
 import UIKit
 import CoreData
 
-class DisplayEventViewController: UIViewController {
+class addNewEventViewController: UIViewController {
     
-    var currentEvent: NSManagedObject?
+    var newEvent: NSManagedObject!
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var aboutLabel: UILabel!
-    let dateFormatter = NSDateFormatter()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = currentEvent?.valueForKey("title") as! String?
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateLabel.text = currentEvent?.valueForKey("date")!.dateFormat as String?
-        locationLabel.text = currentEvent?.valueForKey("location") as! String?
-        aboutLabel.text = currentEvent?.valueForKey("about") as! String?
+
         // Do any additional setup after loading the view.
     }
 

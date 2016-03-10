@@ -14,6 +14,7 @@
 		0CB781021C90B8530084B6CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB781001C90B8530084B6CA /* LaunchScreen.storyboard */; };
 		0CB781101C90DFB70084B6CA /* DisplayEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB7810F1C90DFB70084B6CA /* DisplayEventViewController.swift */; };
 		0CB781121C90DFF20084B6CA /* EventsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB781111C90DFF20084B6CA /* EventsTableTableViewController.swift */; };
+		0CB781141C90EBCE0084B6CA /* addNewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB781131C90EBCE0084B6CA /* addNewEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0CB781031C90B8530084B6CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CB7810F1C90DFB70084B6CA /* DisplayEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayEventViewController.swift; sourceTree = "<group>"; };
 		0CB781111C90DFF20084B6CA /* EventsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableTableViewController.swift; sourceTree = "<group>"; };
+		0CB781131C90EBCE0084B6CA /* addNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0CB781111C90DFF20084B6CA /* EventsTableTableViewController.swift */,
 				0CB780F41C90B8530084B6CA /* AppDelegate.swift */,
 				0CB780F81C90B8530084B6CA /* Main.storyboard */,
+				0CB781131C90EBCE0084B6CA /* addNewEventViewController.swift */,
 				0CB780FE1C90B8530084B6CA /* Assets.xcassets */,
 				0CB781001C90B8530084B6CA /* LaunchScreen.storyboard */,
 				0CB781031C90B8530084B6CA /* Info.plist */,
@@ -145,6 +148,7 @@
 				0CB781101C90DFB70084B6CA /* DisplayEventViewController.swift in Sources */,
 				0CB780FD1C90B8530084B6CA /* homework2.xcdatamodeld in Sources */,
 				0CB780F51C90B8530084B6CA /* AppDelegate.swift in Sources */,
+				0CB781141C90EBCE0084B6CA /* addNewEventViewController.swift in Sources */,
 				0CB781121C90DFF20084B6CA /* EventsTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

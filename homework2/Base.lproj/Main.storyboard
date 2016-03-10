@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Events Table View Controller-->
+        <!--Events Table Table View Controller-->
         <scene sceneID="hRL-UE-yqZ">
             <objects>
-                <tableViewController id="ble-l2-3Y2" customClass="EventsTableViewController" customModule="homework2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ble-l2-3Y2" customClass="EventsTableTableViewController" customModule="homework2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ojn-48-xj9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="bPf-BX-pgr" kind="show" id="8xD-5q-Sga"/>
+                                    <segue destination="bPf-BX-pgr" kind="show" identifier="toDisplayEvent" id="8xD-5q-Sga"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -31,16 +31,25 @@
                             <outlet property="delegate" destination="ble-l2-3Y2" id="0hP-wR-hel"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="l7f-fy-1Fj"/>
+                    <navigationItem key="navigationItem" id="l7f-fy-1Fj">
+                        <barButtonItem key="rightBarButtonItem" title="Add Event" id="kHu-GZ-j0l">
+                            <connections>
+                                <action selector="addEvent:" destination="ble-l2-3Y2" id="cnv-mD-Frn"/>
+                                <segue destination="3zL-HV-sFA" kind="popoverPresentation" identifier="toAddEventViewController" popoverAnchorBarButtonItem="kHu-GZ-j0l" id="vco-He-zrT">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwT-MQ-17G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1398" y="225"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Event View Controller-->
         <scene sceneID="REm-EX-bRm">
             <objects>
-                <viewController id="3zL-HV-sFA" sceneMemberID="viewController">
+                <viewController id="3zL-HV-sFA" customClass="addNewEventViewController" customModule="homework2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GIc-fL-o16"/>
                         <viewControllerLayoutGuide type="bottom" id="1az-BT-M0k"/>
@@ -48,6 +57,14 @@
                     <view key="view" contentMode="scaleToFill" id="Vg8-hr-jm7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Vg-9C-v3k">
+                                <rect key="frame" x="0.0" y="223" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="479259794.76973301">
+                                    <!--2016-03-09 23:43:14 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -66,8 +83,51 @@
                     <view key="view" contentMode="scaleToFill" id="8Di-sU-9G8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qa-w3-6AV">
+                                <rect key="frame" x="64" y="96" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRm-hl-KTz">
+                                <rect key="frame" x="34" y="125" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4S-P7-oky">
+                                <rect key="frame" x="12" y="154" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR8-jr-bPb">
+                                <rect key="frame" x="171" y="96" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAg-5E-4UO">
+                                <rect key="frame" x="171" y="154" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeP-76-PQZ">
+                                <rect key="frame" x="171" y="125" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="BAg-5E-4UO" id="f2r-4r-Lw2"/>
+                        <outlet property="dateLabel" destination="wR8-jr-bPb" id="lFH-av-k1Q"/>
+                        <outlet property="locationLabel" destination="UeP-76-PQZ" id="vSV-zf-WHr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-ZO-zyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
