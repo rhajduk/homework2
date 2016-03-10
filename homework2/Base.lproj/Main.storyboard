@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fCn-FZ-Qgb">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCn-FZ-Qgb" id="51Y-BB-OtU">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -100,6 +100,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcW-YR-ajR">
                                 <rect key="frame" x="267" y="518" width="76" height="30"/>
                                 <state key="normal" title="Save Event"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="3zL-HV-sFA" eventType="touchUpInside" id="lVh-Xi-toh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyn-W2-tOK">
                                 <rect key="frame" x="260" y="246" width="80" height="21"/>
@@ -110,6 +113,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutField" destination="rd0-6Q-1Fz" id="aoL-KP-3m1"/>
+                        <outlet property="datePicker" destination="2Vg-9C-v3k" id="Kmf-g3-mW8"/>
+                        <outlet property="eventNameField" destination="7Pb-vR-KF5" id="JD2-nS-bzJ"/>
+                        <outlet property="locationField" destination="oiW-CA-ZnP" id="rIx-Kx-kMz"/>
+                        <outlet property="saveButton" destination="DcW-YR-ajR" id="Ep2-aL-5oh"/>
+                        <segue destination="ble-l2-3Y2" kind="show" identifier="backToEventList" id="LKm-Da-BjD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWP-iT-ZMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,4 +206,7 @@
             <point key="canvasLocation" x="586" y="225"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="LKm-Da-BjD"/>
+    </inferredMetricsTieBreakers>
 </document>
