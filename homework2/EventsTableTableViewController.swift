@@ -64,11 +64,14 @@ class EventsTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let event = events[indexPath.row]
         cell.textLabel!.text = event.valueForKey("title") as? String
-
         return cell
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let x = events[indexPath.row]
+        self.performSegueWithIdentifier("toDisplayEvent", sender: x)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -111,17 +114,10 @@ class EventsTableTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        if segue.identifier == "toDisplayEvent" {
+        if segue.identifier == "toDisplayEvent"{
+            let selectedEvent = sender as! NSManagedObject
             let display = segue.destinationViewController as! DisplayEventViewController
-            // Pass the selected object to the new view controller.
-//            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) {
-//                let selectedEvent = events[indexPath.row]
-//                display.currentEvent = selectedEvent
-//            }
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let selectedEvent = events[indexPath.row]
                 display.currentEvent = selectedEvent
-            }
         }
     }
 }
