@@ -18,6 +18,18 @@ class DisplayEventViewController: UIViewController {
     @IBOutlet weak var aboutLabel: UILabel!
     let dateFormatter = NSDateFormatter()
     
+    @IBAction func deleteButton(sender: AnyObject) {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext
+        context.delete(currentEvent)
+        do {
+           try context.save()
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = currentEvent?.valueForKey("title") as! String?
@@ -32,6 +44,8 @@ class DisplayEventViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*
