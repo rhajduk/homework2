@@ -17,6 +17,7 @@ class EventsTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Calendar"
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,6 +28,7 @@ class EventsTableTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
@@ -65,6 +67,7 @@ class EventsTableTableViewController: UITableViewController {
 
         return cell
     }
+    
     
 
     /*
@@ -108,9 +111,13 @@ class EventsTableTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        if segue.identifier == "toDisplayEventViewController" {
+        if segue.identifier == "toDisplayEvent" {
             let display = segue.destinationViewController as! DisplayEventViewController
             // Pass the selected object to the new view controller.
+//            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) {
+//                let selectedEvent = events[indexPath.row]
+//                display.currentEvent = selectedEvent
+//            }
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedEvent = events[indexPath.row]
                 display.currentEvent = selectedEvent

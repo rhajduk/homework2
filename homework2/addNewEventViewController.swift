@@ -11,7 +11,7 @@ import CoreData
 
 class addNewEventViewController: UIViewController {
     
-    var newEvent: NSManagedObject!
+    //var newEvent: NSManagedObject!
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var aboutField: UITextField!
@@ -24,9 +24,9 @@ class addNewEventViewController: UIViewController {
         let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
         let newEvent = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
-        newEvent.setValue(eventNameField, forKey: "title")
-        newEvent.setValue(locationField, forKey: "location")
-        newEvent.setValue(aboutField, forKey: "about")
+        newEvent.setValue(eventNameField.text, forKey: "title")
+        newEvent.setValue(locationField.text, forKey: "location")
+        newEvent.setValue(aboutField.text, forKey: "about")
         newEvent.setValue(datePicker.date, forKey: "date")
         
         do{
@@ -36,14 +36,14 @@ class addNewEventViewController: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
         
-        prepareForSegue(<#T##segue: UIStoryboardSegue##UIStoryboardSegue#>, sender: UIButton)
+        [self.performSegueWithIdentifier("backToEventList", sender: self)]
         
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "New Event"
         // Do any additional setup after loading the view.
     }
 
@@ -52,17 +52,14 @@ class addNewEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        // Get the new view controller using 
-        let back = segue.destinationViewController as! EventsTableTableViewController
+        // Get the new view controller using
         // Pass the selected object to the new view controller.
-    }
+    //}
     
 
 }
