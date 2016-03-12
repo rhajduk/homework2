@@ -65,7 +65,8 @@ class EventsTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let event = events[indexPath.row]
         cell.textLabel!.text = event.valueForKey("title") as? String
-        //cell.dateLabel.text = event.valueForKey("date") as? String
+        cell.textLabel!.text! = cell.textLabel!.text!.stringByAppendingString(" - " )
+        cell.textLabel!.text! = cell.textLabel!.text!.stringByAppendingString((event.valueForKey("date") as? String)!)
         return cell
     }
     
