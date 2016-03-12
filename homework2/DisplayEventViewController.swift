@@ -12,29 +12,31 @@ import CoreData
 class DisplayEventViewController: UIViewController {
     
     var currentEvent: NSManagedObject?
+    var objectContext: NSManagedObjectContext?
 
+    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var aboutLabel: UILabel!
-    let dateFormatter = NSDateFormatter()
+    
     
     @IBAction func deleteButton(sender: AnyObject) {
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        let context = appDelegate.managedObjectContext
-        context.delete(currentEvent)
+//        let appDelegate =
+//        UIApplication.sharedApplication().delegate as! AppDelegate
+//        let context = appDelegate.managedObjectContext
+        self.objectContext!.deleteObject(currentEvent!)
         do {
-           try context.save()
+           try objectContext!.save()
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
         }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = currentEvent?.valueForKey("title") as! String?
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateLabel.text = currentEvent?.valueForKey("date")!.dateFormat as String?
+        navBar.title = currentEvent?.valueForKey("title") as! String?
+        dateLabel.text = currentEvent?.valueForKey("date") as! String?
         locationLabel.text = currentEvent?.valueForKey("location") as! String?
         aboutLabel.text = currentEvent?.valueForKey("about") as! String?
         // Do any additional setup after loading the view.

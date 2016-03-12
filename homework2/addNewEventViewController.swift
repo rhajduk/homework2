@@ -27,7 +27,12 @@ class addNewEventViewController: UIViewController {
         newEvent.setValue(eventNameField.text, forKey: "title")
         newEvent.setValue(locationField.text, forKey: "location")
         newEvent.setValue(aboutField.text, forKey: "about")
-        newEvent.setValue(datePicker.date, forKey: "date")
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        let dateString = dateFormatter.stringFromDate(datePicker.date)
+        newEvent.setValue(dateString, forKey:("date"))
+        //newEvent.setValue(datePicker.date, forKey: "date")
         
         do{
             try managedContext.save()
@@ -36,14 +41,11 @@ class addNewEventViewController: UIViewController {
             print("Could not save \(error), \(error.userInfo)")
         }
         
-        [self.performSegueWithIdentifier("backToEventList", sender: self)]
-        
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "New Event"
         // Do any additional setup after loading the view.
     }
 

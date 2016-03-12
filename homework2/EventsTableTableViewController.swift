@@ -13,14 +13,14 @@ class EventsTableTableViewController: UITableViewController {
     
  
     var events = [NSManagedObject]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Calendar"
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -28,6 +28,7 @@ class EventsTableTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -64,6 +65,7 @@ class EventsTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let event = events[indexPath.row]
         cell.textLabel!.text = event.valueForKey("title") as? String
+        //cell.dateLabel.text = event.valueForKey("date") as? String
         return cell
     }
     
@@ -72,14 +74,14 @@ class EventsTableTableViewController: UITableViewController {
         self.performSegueWithIdentifier("toDisplayEvent", sender: x)
         
     }
-
-    /*
+/*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+*/
 
     /*
     // Override to support editing the table view.
@@ -118,6 +120,7 @@ class EventsTableTableViewController: UITableViewController {
             let selectedEvent = sender as! NSManagedObject
             let display = segue.destinationViewController as! DisplayEventViewController
                 display.currentEvent = selectedEvent
+            display.objectContext = selectedEvent.managedObjectContext!
         }
     }
 }

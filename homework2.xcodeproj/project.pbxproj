@@ -28,6 +28,7 @@
 		0CB7810F1C90DFB70084B6CA /* DisplayEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayEventViewController.swift; sourceTree = "<group>"; };
 		0CB781111C90DFF20084B6CA /* EventsTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableTableViewController.swift; sourceTree = "<group>"; };
 		0CB781131C90EBCE0084B6CA /* addNewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewEventViewController.swift; sourceTree = "<group>"; };
+		0CB781151C93AC600084B6CA /* homework 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "homework 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +305,7 @@
 		0CB780FB1C90B8530084B6CA /* homework2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0CB781151C93AC600084B6CA /* homework 2.xcdatamodel */,
 				0CB780FC1C90B8530084B6CA /* homework2.xcdatamodel */,
 			);
 			currentVersion = 0CB780FC1C90B8530084B6CA /* homework2.xcdatamodel */;
